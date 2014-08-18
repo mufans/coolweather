@@ -14,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.coolweather.R;
+import com.example.coolweather.service.UpdateWeatherService;
 import com.example.coolweather.util.HttpCallBackListener;
 import com.example.coolweather.util.HttpUtil;
 import com.example.coolweather.util.Utility;
@@ -105,6 +106,8 @@ public class WeatherActivity extends Activity implements OnClickListener {
 		weather_desc.setText(sp.getString("weatherDesc", ""));
 		temp1.setText(sp.getString("temp1", ""));
 		temp2.setText(sp.getString("temp2", ""));
+		Intent intent = new Intent(this,UpdateWeatherService.class);
+		startService(intent);
 	}
 	@Override
 	public void onClick(View v) {
